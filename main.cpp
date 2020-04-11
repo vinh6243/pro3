@@ -34,8 +34,6 @@ void printAll(vector<T>& x)
 
 int main()
 {
-    
-    FCFS fcfs;
 
 	int x,y;
 do {
