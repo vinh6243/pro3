@@ -46,7 +46,7 @@ do {
 	if ( x==1 )
 	{ 
 		cout<<"\n/////// First Come First served \\\\\\\\\\\\\\ \n\n"; 
-		fcfs.FCFSmain();
+		FCFSmain();
 	}
 	if ( x==2 )
 	{ 
