@@ -301,11 +301,13 @@ void RRmain() // Round Robin
     for(int i=0;i<numOfProcesses;i=(i+1)%numOfProcesses){
         if(processes[i].remainingTime > 0 && processes[i].arrivalTime <= currentTime)
         {
-        	if(processes[i].remainingTime == processes[i].burstTime){
+        	if(processes[i].remainingTime == processes[i].burstTime)
+        	{
         		processes[i].responseTime = currentTime;
         	}
 
-        	if(processes[i].remainingTime <= timeQuantum){
+        	if(processes[i].remainingTime <= timeQuantum)
+        	{
         		currentTime += processes[i].remainingTime;
         		processes[i].completionTime = currentTime;
         		processes[i].remainingTime = 0;
