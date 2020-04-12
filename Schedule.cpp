@@ -297,7 +297,8 @@ void RRmain() // Round Robin
     currentTime = processes[0].arrivalTime;
     int remainingProcesses = numOfProcesses;
 
-    for(int i=0;i<numOfProcesses;i=(i+1)%numOfProcesses){
+    for(int i=0;i<numOfProcesses;i=(i+1)%numOfProcesses)
+    {
         if(processes[i].remainingTime > 0 && processes[i].arrivalTime <= currentTime)
         {
         	if(processes[i].remainingTime == processes[i].burstTime)
