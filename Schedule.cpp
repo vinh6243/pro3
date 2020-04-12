@@ -23,7 +23,7 @@ class ProcessScheduling
 
         bool isComplete;
 
-		int responseTime;
+	int responseTime;
         int completionTime;
         int remainingTime;
         
