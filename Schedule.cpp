@@ -6,14 +6,13 @@ using namespace std;
 
     int sumWaitingTime = 0;
     int sumTurnAroundTime = 0;
-    int cumulativeSum = 0;
+    int TimeSum = 0;
     int sumResponseTime = 0;
     int sumCompletionTime = 0;
     int currentTime = 0;
     int timeQuantum;
     int numOfProcesses;
     
-
 class ProcessScheduling
 {
     public:
@@ -72,7 +71,7 @@ void FCFSmain()
 
     for(int i=0; i < numOfProcesses; i++)
     {
-        processes[i].waitingTime = cumulativeSum;
+        processes[i].waitingTime = TimeSum;
         processes[i].completionTime =  processes[i].waitingTime + processes[i].burstTime;
         if(i == 0)
         {
@@ -92,7 +91,7 @@ void FCFSmain()
         sumWaitingTime = sumWaitingTime + processes[i].waitingTime;
         sumTurnAroundTime =sumTurnAroundTime +  processes[i].turnAroundTime;
 
-        cumulativeSum = cumulativeSum + processes[i].burstTime;
+        TimeSum = TimeSum + processes[i].burstTime;
     }
     display(numOfProcesses, sumTurnAroundTime, sumWaitingTime);//display the turn and wait
     
@@ -249,7 +248,7 @@ void Prioritymain() //Priority
         		
 		processes[currentHighestPriorityIndex].responseTime = currentTime;
         processes[currentHighestPriorityIndex].remainingTime = 0;
-        currentTime += processes[currentHighestPriorityIndex].burstTime;
+        currentTime = currentTime + processes[currentHighestPriorityIndex].burstTime;
         processes[currentHighestPriorityIndex].completionTime = currentTime; 	
     }//end of while loop
 
@@ -327,7 +326,7 @@ void RRmain() // Round Robin
         }
     }//end for loop
 
-    for(int i=0;i<numOfProcesses;i++)
+    for(int i=0; i<numOfProcesses; i++)
     {
         cout << processes[i].processName << ": ";
         processes[i].turnAroundTime = processes[i].completionTime - processes[i].arrivalTime;
