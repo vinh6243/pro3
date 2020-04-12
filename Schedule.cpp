@@ -379,6 +379,13 @@ void RRmain() // Round Robin
 int main() 
 {
   int x,y;
+  
+  cout << "----------------------------------------------------------" << endl;
+  cout << "Vinh Pham & Cristian Cisneros Alvarez" << endl;
+  cout << "Dr. Zheng, CS433 Programming Assignment 3 " << endl;
+  cout << "This project involves implementing several \ndifferent process scheduling algorithms." << endl;
+  cout << "----------------------------------------------------------" << endl;
+  
   cout << "1. (First Come First Served) \n";
   cout << "2. (Shortest Job First)\n";
   cout << "3. (Prority)\n";
